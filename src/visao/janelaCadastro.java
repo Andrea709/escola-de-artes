@@ -55,7 +55,7 @@ public class janelaCadastro extends JFrame {
 		
 		JLabel lblCadastro = new JLabel("Cadastro");
 		lblCadastro.setFont(new Font("Baskerville Old Face", Font.PLAIN, 31));
-		lblCadastro.setBounds(105, 0, 117, 41);
+		lblCadastro.setBounds(105, 0, 177, 41);
 		contentPane.add(lblCadastro);
 		
 		JLabel lblTipo = new JLabel("Função:");
