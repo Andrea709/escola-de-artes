@@ -8,6 +8,9 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
@@ -108,11 +111,23 @@ public class janelaCadastro extends JFrame {
 		btnFechar.setBounds(232, 227, 98, 23);
 		contentPane.add(btnFechar);
 		
+		
+		//botao de cadastro, importante
 		JButton btnCadastrar = new JButton("Cadastrar");
 		btnCadastrar.setBackground(new Color(128, 128, 128));
 		btnCadastrar.setBounds(10, 227, 98, 23);
+		btnCadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//variaveis
+				String nome = txtNome.getText();
+				String telefone = txtTelefone.getText();
+				
+			}
+		});
 		contentPane.add(btnCadastrar);
 		
+
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.setBackground(new Color(128, 128, 128));
 		btnVoltar.setBounds(121, 227, 98, 23);
