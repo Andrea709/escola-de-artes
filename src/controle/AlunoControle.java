@@ -12,6 +12,44 @@ public class AlunoControle {
 		this.tabelaAlunos = new ArrayList<>(); //pra que serve tbm jesus
 	}
 	
-	//INSERT
+	// INSERT
+	public boolean inserir(Aluno a) {
+		if (a != null) {
+			tabelaAlunos.add(a);
+			return true;
+		}
+		return false;
+	}
+	
+	// UPDATE
+	public boolean alterar(Aluno a, Long cpfAluno) {
+
+		for (Aluno aluno : tabelaAlunos) {
+
+			if (aluno.getCPF() == cpfAluno) {
+				aluno.setNome(a.getNome());
+				return true;
+			}
+		}
+	return false;
+	}
+	
+	//DELETE
+	public boolean deletar(Aluno a, Long cpfAluno) {
+
+		for (Aluno aluno : tabelaAlunos) {
+			if (aluno.getCPF() == cpfAluno) {
+				tabelaAlunos.remove(aluno);
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	
+	// SELECT ALL
+		public ArrayList<Aluno> listaAlunos() {
+			return this.tabelaAlunos;
+		}
 	
 }
