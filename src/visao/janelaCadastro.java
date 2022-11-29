@@ -5,6 +5,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import modelo.Aluno;
+
+
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -122,6 +126,16 @@ public class janelaCadastro extends JFrame {
 				//variaveis
 				String nome = txtNome.getText();
 				String telefone = txtTelefone.getText();
+				String cpf = txtCPF.getText();
+				String email = txtEmail.getText();
+				
+				//importacao do modelo aluno, n sei mto bem pq
+				Aluno novoAluno = new Aluno();
+				
+				//garantia de todos os campos preenchidos
+				
+			
+				
 				
 			}
 		});
