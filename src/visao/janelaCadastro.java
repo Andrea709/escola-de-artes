@@ -6,11 +6,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import controle.AlunoControle;
 import modelo.Aluno;
 
 
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -134,8 +137,46 @@ public class janelaCadastro extends JFrame {
 				
 				//garantia de todos os campos preenchidos
 				
-			
+				//nome
+				if (nome == null || nome.isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Nenhum 'nome' preenchido!");
+				} else {
+					novoAluno.setNome(nome);
+				}
+				//telefone
+				if (telefone == null || telefone.isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Nenhum 'telefone' preenchido!");
+				} else {
+					novoAluno.setTelefone(Integer.parseInt(telefone));
+				}
+				//cpf
+				if (cpf == null || cpf.isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Nenhum 'cpf' preenchido!");
+				} else {
+					novoAluno.setCPF(Long.parseLong(cpf));
+				}
+				//email
+				if (email == null || email.isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Nenhum 'email' preenchido!");
+				} else {
+					novoAluno.setNome(email);
+				}
 				
+				//confirmacao de inserir? eu acho
+				AlunoControle tabelaAluno = new AlunoControle();
+				boolean inserir = tabelaAluno.inserir(novoAluno);
+				
+				
+				if (inserir == true) {
+					JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+
+					// Limpa campos
+					txtNome.setText(null);
+					txtCPF.setText(null);
+				} else {
+					JOptionPane.showMessageDialog(null, "Erro ao cadastrar!");
+				}
+			
 				
 			}
 		});

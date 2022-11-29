@@ -22,12 +22,13 @@ public class AlunoControle {
 	}
 	
 	// UPDATE
-	public boolean alterar(Aluno a, Long cpfAluno) {
+	public boolean alterar(Aluno a, Long cpfAluno, Integer telefone, String email) {
 
 		for (Aluno aluno : tabelaAlunos) {
 
 			if (aluno.getCPF() == cpfAluno) {
 				aluno.setNome(a.getNome());
+				aluno.setEmail(a.getEmail());
 				return true;
 			}
 		}
@@ -42,6 +43,10 @@ public class AlunoControle {
 				tabelaAlunos.remove(aluno);
 				return true;
 			}
+			
+			
+			
+			
 		}
 		return false;
 	}
