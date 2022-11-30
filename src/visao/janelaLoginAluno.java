@@ -4,12 +4,20 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
+import java.awt.Dimension;
 
 public class janelaLoginAluno extends JFrame {
 
@@ -31,7 +39,10 @@ public class janelaLoginAluno extends JFrame {
 				}
 			}
 		});
+		
 	}
+	
+	
 
 	/**
 	 * Create the frame.
@@ -42,6 +53,7 @@ public class janelaLoginAluno extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(211, 211, 211));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setLocationRelativeTo(null); //deixar sempre no centro
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -66,7 +78,7 @@ public class janelaLoginAluno extends JFrame {
 		lblSenha.setBounds(20, 105, 46, 14);
 		contentPane.add(lblSenha);
 		
-		txtSenha = new JTextField();
+		txtSenha = new JPasswordField();
 		txtSenha.setColumns(10);
 		txtSenha.setBounds(83, 104, 201, 20);
 		contentPane.add(txtSenha);
@@ -74,11 +86,26 @@ public class janelaLoginAluno extends JFrame {
 		JButton btnLogin = new JButton("Login");
 		btnLogin.setBackground(new Color(128, 128, 128));
 		btnLogin.setBounds(93, 155, 89, 23);
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+                if(checkLogin(txtUsuario.getText(), new String(((JPasswordField) txtSenha).getPassword()))) {
+					JOptionPane.showMessageDialog(null, "Bem-vindo ao sistema!" );
+				} else {
+					JOptionPane.showMessageDialog(null, "Dados inválidos");
+				}
+				
+			}
+		});
 		contentPane.add(btnLogin);
 		
 		JButton btnFechar = new JButton("Fechar");
 		btnFechar.setBackground(new Color(128, 128, 128));
 		btnFechar.setBounds(195, 155, 89, 23);
 		contentPane.add(btnFechar);
+	
+	}
+	
+	public boolean checkLogin (String usuario, String senha) {
+		return usuario.equals("aluno") && senha.equals("123");
 	}
 }

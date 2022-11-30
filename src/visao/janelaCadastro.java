@@ -55,6 +55,7 @@ public class janelaCadastro extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(211, 211, 211));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setLocationRelativeTo(null); //deixar sempre no centro
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
