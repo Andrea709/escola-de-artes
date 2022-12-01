@@ -4,7 +4,7 @@ public class Aluno {
 	
 	private String nome;
 	private Integer telefone;
-	private Long cpf;
+	private String cpf;
 	private String email;
 	
 	public Aluno() {}
@@ -26,10 +26,10 @@ public class Aluno {
 		this.telefone = telefone;
 	}
 	
-	public Long getCPF() {
+	public String getCPF() {
 		return cpf;
 	}
-	public void setCPF(Long cpf) {
+	public void setCPF(String cpf) {
 		this.cpf = cpf;
 	}
 	
