@@ -174,6 +174,8 @@ public class janelaCadastro extends JFrame {
 					// Limpa campos
 					txtNome.setText(null);
 					txtCPF.setText(null);
+					txtEmail.setText(null);
+					txtTelefone.setText(null);
 				} else {
 					JOptionPane.showMessageDialog(null, "Erro ao cadastrar!");
 				}
