@@ -43,6 +43,7 @@ public class janelaPrincipal extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(211, 211, 211));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setLocationRelativeTo(null); //deixar sempre no centro
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -66,11 +67,23 @@ public class janelaPrincipal extends JFrame {
 		JButton btnFechar = new JButton("Fechar");
 		btnFechar.setBackground(new Color(128, 128, 128));
 		btnFechar.setBounds(208, 94, 89, 23);
+		btnFechar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
 		contentPane.add(btnFechar);
 		
 		JButton btnAluno = new JButton("Aluno");
 		btnAluno.setBackground(new Color(128, 128, 128));
 		btnAluno.setBounds(10, 51, 89, 32);
+		btnAluno.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				janelaLoginAluno j2 = new janelaLoginAluno();
+				j2.setVisible(true);
+				dispose();
+			}
+		});
 		contentPane.add(btnAluno);
 	}
 }

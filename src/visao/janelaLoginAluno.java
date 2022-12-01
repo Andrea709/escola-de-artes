@@ -49,7 +49,7 @@ public class janelaLoginAluno extends JFrame {
 	 */
 	public janelaLoginAluno() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 310, 220);
+		setBounds(100, 100, 319, 220);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(211, 211, 211));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -84,8 +84,8 @@ public class janelaLoginAluno extends JFrame {
 		contentPane.add(txtSenha);
 		
 		JButton btnLogin = new JButton("Login");
-		btnLogin.setBackground(new Color(128, 128, 128));
-		btnLogin.setBounds(93, 155, 89, 23);
+		btnLogin.setBackground(Color.GRAY);
+		btnLogin.setBounds(10, 155, 89, 23);
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
                 if(checkLogin(txtUsuario.getText(), new String(((JPasswordField) txtSenha).getPassword()))) {
@@ -99,9 +99,19 @@ public class janelaLoginAluno extends JFrame {
 		contentPane.add(btnLogin);
 		
 		JButton btnFechar = new JButton("Fechar");
-		btnFechar.setBackground(new Color(128, 128, 128));
-		btnFechar.setBounds(195, 155, 89, 23);
+		btnFechar.setBackground(Color.GRAY);
+		btnFechar.setBounds(208, 155, 89, 23);
+		btnFechar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
 		contentPane.add(btnFechar);
+		
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setBackground(Color.GRAY);
+		btnVoltar.setBounds(109, 155, 89, 23);
+		contentPane.add(btnVoltar);
 	
 	}
 	
