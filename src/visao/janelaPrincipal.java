@@ -51,6 +51,13 @@ public class janelaPrincipal extends JFrame {
 		JButton btnLoginServidor = new JButton("Servidor");
 		btnLoginServidor.setBackground(new Color(128, 128, 128));
 		btnLoginServidor.setBounds(109, 51, 89, 32);
+		btnLoginServidor.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				janelaLoginServidor j3 = new janelaLoginServidor();
+				j3.setVisible(true);
+				dispose();
+			}
+		});
 		contentPane.add(btnLoginServidor);
 		
 		JLabel lblLogin = new JLabel("Login");
@@ -62,6 +69,13 @@ public class janelaPrincipal extends JFrame {
 		btnCadastrar.setBackground(new Color(128, 128, 128));
 		btnCadastrar.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnCadastrar.setBounds(208, 51, 89, 32);
+		btnCadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				janelaCadastro j4 = new janelaCadastro();
+				j4.setVisible(true);
+				dispose();
+			}
+		});
 		contentPane.add(btnCadastrar);
 		
 		JButton btnFechar = new JButton("Fechar");

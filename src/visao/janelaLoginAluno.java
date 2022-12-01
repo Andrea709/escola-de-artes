@@ -111,6 +111,13 @@ public class janelaLoginAluno extends JFrame {
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.setBackground(Color.GRAY);
 		btnVoltar.setBounds(109, 155, 89, 23);
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				janelaPrincipal ja = new janelaPrincipal();
+				ja.setVisible(true);
+				dispose();
+			}
+		});
 		contentPane.add(btnVoltar);
 	
 	}
