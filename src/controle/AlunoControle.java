@@ -5,13 +5,24 @@ import java.util.ArrayList;
 import modelo.Aluno;
 
 public class AlunoControle {
-	
-	private ArrayList<Aluno> tabelaAlunos; //pra que serve?
-	
-	public AlunoControle() {
-		this.tabelaAlunos = new ArrayList<>(); //pra que serve tbm jesus
+
+	private static ArrayList<Aluno> tabelaAlunos;
+	private static AlunoControle instancia;
+
+	public static AlunoControle getInstancia() {
+
+		if (instancia == null) {
+			instancia = new AlunoControle();
+			tabelaAlunos = new ArrayList<>();
+		}
+
+		return instancia;
 	}
-	
+
+	private AlunoControle() {
+
+	}
+
 	// INSERT
 	public boolean inserir(Aluno a) {
 		if (a != null) {
@@ -20,39 +31,38 @@ public class AlunoControle {
 		}
 		return false;
 	}
-	
+
 	// UPDATE
-	public boolean alterar(Aluno a, Long cpfAluno) {
+	public boolean alterar(Aluno alunoAlterar, long matricula) {
 
 		for (Aluno aluno : tabelaAlunos) {
 
-			if (aluno.getCPF() == cpfAluno) {
-				aluno.setNome(a.getNome());
+			if (aluno.getMatricula() == matricula) {
+				aluno.setNome(alunoAlterar.getNome());
+				
+				// colocar os sets
 				return true;
-			}
-		}
-	return false;
-	}
-	
-	//DELETE
-	public boolean deletar(Aluno a, Long cpfAluno, Integer telefoneAluno, String emailAluno) {
-
-		for (Aluno aluno : tabelaAlunos) {
-			if (aluno.getCPF() == cpfAluno) {
-				tabelaAlunos.remove(aluno);
-				return true;
-			}
-			if (aluno.getEmail() == emailAluno) {
-				tabelaAlunos.remove(aluno);
 			}
 		}
 		return false;
 	}
-	
-	
-	// SELECT ALL
-		public ArrayList<Aluno> listaAlunos() {
-			return this.tabelaAlunos;
+
+	// DELETE
+	public boolean deletar(Aluno a, long matricula) {
+
+		for (Aluno aluno : tabelaAlunos) {
+			if (aluno.getMatricula() == matricula) {
+				tabelaAlunos.remove(aluno);
+				return true;
+			}
+
 		}
-	
+		return false;
+	}
+
+	// SELECT ALL
+	public ArrayList<Aluno> listaAlunos() {
+		return tabelaAlunos;
+	}
+
 }
