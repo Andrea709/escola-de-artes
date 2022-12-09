@@ -11,6 +11,8 @@ import javax.swing.UIManager;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MenuAluno extends JFrame {
 
@@ -54,6 +56,10 @@ public class MenuAluno extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JButton btnCursos = new JButton("Cursos");
+		btnCursos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnCursos.setBackground(new Color(128, 128, 128));
 		btnCursos.setBounds(32, 71, 104, 32);
 		contentPane.add(btnCursos);
