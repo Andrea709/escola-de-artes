@@ -37,7 +37,7 @@ public class MenuServidor extends JFrame {
 	 */
 	public MenuServidor() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 375, 190);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(211, 211, 211));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -48,35 +48,39 @@ public class MenuServidor extends JFrame {
 		
 		JLabel lblMenu = new JLabel("Menu Servidor");
 		lblMenu.setFont(new Font("Baskerville Old Face", Font.BOLD, 31));
-		lblMenu.setBounds(114, 11, 207, 41);
+		lblMenu.setBounds(76, 11, 207, 41);
 		contentPane.add(lblMenu);
 		
 		JButton btnCadastrarAlunos = new JButton("Cadastrar Alunos");
 		btnCadastrarAlunos.setBackground(new Color(128, 128, 128));
-		btnCadastrarAlunos.setBounds(29, 79, 139, 41);
+		btnCadastrarAlunos.setBounds(24, 63, 139, 41);
 		contentPane.add(btnCadastrarAlunos);
 		
 		JButton btnCadastrarCursos = new JButton("Cadastrar Cursos");
 		btnCadastrarCursos.setBackground(new Color(128, 128, 128));
-		btnCadastrarCursos.setBounds(249, 79, 139, 41);
+		btnCadastrarCursos.setBounds(195, 63, 139, 41);
 		contentPane.add(btnCadastrarCursos);
 		
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.setBackground(new Color(128, 128, 128));
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				janelaLoginServidor j3 = new janelaLoginServidor();
+				j3.setVisible(true);
+				dispose();
 			}
 		});
-		btnVoltar.setBounds(209, 227, 89, 23);
+		btnVoltar.setBounds(127, 115, 89, 23);
 		contentPane.add(btnVoltar);
 		
 		JButton btnFechar = new JButton("Fechar");
 		btnFechar.setBackground(new Color(128, 128, 128));
 		btnFechar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+						System.exit(0);
 			}
 		});
-		btnFechar.setBounds(319, 227, 89, 23);
+		btnFechar.setBounds(245, 115, 89, 23);
 		contentPane.add(btnFechar);
 	}
 }
