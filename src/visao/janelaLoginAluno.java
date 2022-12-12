@@ -89,7 +89,11 @@ public class janelaLoginAluno extends JFrame {
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
                 if(checkLogin(txtUsuario.getText(), new String(((JPasswordField) txtSenha).getPassword()))) {
-					JOptionPane.showMessageDialog(null, "Bem-vindo ao sistema!" );
+            		        JOptionPane.showMessageDialog(null, "Bem-vindo ao sistema!" );
+						    MenuAluno j4 = new MenuAluno();
+							j4.setVisible(true);
+							dispose();
+	
 				} else {
 					JOptionPane.showMessageDialog(null, "Dados inválidos");
 				}

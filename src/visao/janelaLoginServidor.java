@@ -90,6 +90,9 @@ public class janelaLoginServidor extends JFrame {
 			public void actionPerformed(ActionEvent e) {
                 if(checkLogin(txtUsuario.getText(), new String(((JPasswordField) txtSenha).getPassword()))) {
 					JOptionPane.showMessageDialog(null, "Bem-vindo ao sistema!" );
+					 MenuServidor j5 = new MenuServidor();
+						j5.setVisible(true);
+						dispose();
 				} else {
 					JOptionPane.showMessageDialog(null, "Dados inválidos");
 				}

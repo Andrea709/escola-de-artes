@@ -39,7 +39,7 @@ public class janelaPrincipal extends JFrame {
 	public janelaPrincipal() {
 		setBackground(new Color(105, 105, 105));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 321, 162);
+		setBounds(100, 100, 291, 162);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(211, 211, 211));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -50,7 +50,7 @@ public class janelaPrincipal extends JFrame {
 		
 		JButton btnLoginServidor = new JButton("Servidor");
 		btnLoginServidor.setBackground(new Color(128, 128, 128));
-		btnLoginServidor.setBounds(109, 51, 89, 32);
+		btnLoginServidor.setBounds(144, 51, 111, 32);
 		btnLoginServidor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				janelaLoginServidor j3 = new janelaLoginServidor();
@@ -62,25 +62,12 @@ public class janelaPrincipal extends JFrame {
 		
 		JLabel lblLogin = new JLabel("Login");
 		lblLogin.setFont(new Font("Baskerville Old Face", Font.BOLD, 31));
-		lblLogin.setBounds(99, 0, 154, 40);
+		lblLogin.setBounds(91, 0, 154, 40);
 		contentPane.add(lblLogin);
-		
-		JButton btnCadastrar = new JButton("Cadastrar");
-		btnCadastrar.setBackground(new Color(128, 128, 128));
-		btnCadastrar.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		btnCadastrar.setBounds(208, 51, 89, 32);
-		btnCadastrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				janelaCadastro j4 = new janelaCadastro();
-				j4.setVisible(true);
-				dispose();
-			}
-		});
-		contentPane.add(btnCadastrar);
 		
 		JButton btnFechar = new JButton("Fechar");
 		btnFechar.setBackground(new Color(128, 128, 128));
-		btnFechar.setBounds(208, 94, 89, 23);
+		btnFechar.setBounds(179, 94, 76, 23);
 		btnFechar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
@@ -90,7 +77,7 @@ public class janelaPrincipal extends JFrame {
 		
 		JButton btnAluno = new JButton("Aluno");
 		btnAluno.setBackground(new Color(128, 128, 128));
-		btnAluno.setBounds(10, 51, 89, 32);
+		btnAluno.setBounds(21, 51, 111, 32);
 		btnAluno.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				janelaLoginAluno j2 = new janelaLoginAluno();
