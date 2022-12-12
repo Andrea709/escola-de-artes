@@ -4,8 +4,8 @@ public class Aluno {
 
 	private Long matricula;
 	private String nome;
-	private Integer telefone;
-	private Long cpf;
+	private String telefone;
+	private String cpf;
 	private String email;
 
 	public Aluno() {
@@ -27,19 +27,19 @@ public class Aluno {
 		this.nome = nome;
 	}
 
-	public Integer getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(Integer telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 
-	public Long getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(Long cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
@@ -49,6 +49,11 @@ public class Aluno {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public void setCpf1(String valueOf) {
+		// TODO Auto-generated method stub
+
 	}
 
 }

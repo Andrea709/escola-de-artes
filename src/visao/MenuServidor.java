@@ -54,6 +54,13 @@ public class MenuServidor extends JFrame {
 		JButton btnCadastrarAlunos = new JButton("Cadastrar Alunos");
 		btnCadastrarAlunos.setBackground(new Color(128, 128, 128));
 		btnCadastrarAlunos.setBounds(24, 63, 139, 41);
+		btnCadastrarAlunos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				janelaCadastro j7 = new janelaCadastro();
+				j7.setVisible(true);
+				dispose();
+			}
+		});
 		contentPane.add(btnCadastrarAlunos);
 		
 		JButton btnCadastrarCursos = new JButton("Cadastrar Cursos");
